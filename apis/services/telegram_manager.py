@@ -1,15 +1,17 @@
-from telegram_api import TelegramApi
-
+from .telegram_api import TelegramApi
+from dotenv import load_dotenv
+import os
 
 class TelegramManager():
 
-    TOKEN = ''
-    chat_id = ''
+    load_dotenv()
+    TOKEN = os.getenv('TOKEN')
+    chat_id = os.getenv('CHAT_ID')
 
     def __init__(self, text):
         self.text = text
 
-    def get_telegram_api(self,):
+    def get_telegram_api(self):
         TOKEN = self.TOKEN
         chat_id = self.chat_id
         text = self.text
