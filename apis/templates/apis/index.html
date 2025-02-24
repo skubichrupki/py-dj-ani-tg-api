@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <style>
+        body {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            min-width: 100px;
+            max-width: 900px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p>Welcome to Anime Quotes</p>
+        <p>Latest Quotes:</p>
+        <table>
+            <tr>
+                <th>quote id</th>
+                <th>quote text</th>
+                <th>character</th>
+                <th>anime name</th>
+                <th>created date</th>
+            </tr>
+        {% for quote in quotes %}
+            <tr>
+                <td>{{ quote.quote_id }}</td>
+                <td>{{ quote.quote_content}}</td>
+                <td>{{ quote.quote_character_name}}</td>
+                <td>{{ quote.quote_anime_name}}</td>
+                <td>{{ quote.created_date}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <p>count: {{ quotes_count }}</p>
+    </div>
+</body>
+</html>
